@@ -1,10 +1,97 @@
 <!DOCTYPE html>
 <html>
     <head>
-        HELLO!
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <title>project</title>
+        <style>
+            html, body{
+                margin: 0;
+                padding: 0;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .header{
+                text-decoration: underline;
+                text-align: center;
+            }
+            .footer {
+                background-color: chartreuse;
+                color: red;
+                text-align: end;
+                padding: 0;
+            }
+            .error{
+                color: red;
+                font-size: 15px;
+                margin-top: 10px;
+                display: none;
+            }
+            #password-input{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100;
+                background-color: darkgrey;
+            }
+            #main-display{
+                display: none;
+                padding: 10px;
+            }
+            input[type="text"]{
+                padding: 10px;
+                font-size: 10px;
+                width: 300px;
+                margin-bottom: 10px;
+            }
+            button{
+                padding: 10px 20px;
+                font-size: 10px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            button:hover{
+                background-color: cadetblue;
+                color: white;
+            }
+        </style>
+        <script>
+            function passwordHandle(){
+                var pw = "pookie";
+                const input = document.getElementById('user-input').value;
+                if(input === pw){
+                    document.getElementById("password-input").style.display = "none"
+                    document.getElementById("main-display").style.display = "block"
+                }
+                else{
+                    document.getElementById("error-message").style.display = "block"
+                    document.getElementById("user-input").value = "";
+                }
+            }
+        </script>
     </head>
+
     <body>
-        <h1>Hello World!</h1>
-        <p>I'm already suffering.</p>
+        <div id="password-input">
+            <label for="user-input">Enter Password:</label>
+            <input type="password" id="user-input" placeholder="password">
+            <button onclick="passwordHandle()">Submit</button>
+            <div id="error-message" class="error">Wrong Password</div>
+        </div>
+
+        <div id="main-display">
+            <div class="header">
+                <h1>HOHOHOHOHOHO</h1>
+            </div>
+            <p style="text-align: justify;">I'm already suffering.</p>
+            <div class="footer">
+                <p>tyler-danh 2025</p>
+            </div>
+        </div>
+        
     </body>
 </html>
